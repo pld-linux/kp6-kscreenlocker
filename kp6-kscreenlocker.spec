@@ -8,7 +8,7 @@
 Summary:	kscreenlocker
 Name:		kp6-%{kpname}
 Version:	6.3.2
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -30,6 +30,7 @@ BuildRequires:	kf6-kglobalaccel-devel >= %{kf6ver}
 BuildRequires:	kf6-kidletime-devel >= %{kf6ver}
 BuildRequires:	kp6-layer-shell-qt-devel >= %{kdeplasmaver}
 BuildRequires:	kp6-libkscreen-devel >= %{kdeplasmaver}
+BuildRequires:	kp6-libplasma-devel >= %{kdeplasmaver}
 BuildRequires:	ninja
 BuildRequires:	pam-devel
 BuildRequires:	rpmbuild(macros) >= 1.164
