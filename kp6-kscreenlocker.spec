@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.4.5
+%define		kdeplasmaver	6.5.0
 %define		qtver		5.15.2
 %define		kf6ver		5.19.0
 %define		kpname		kscreenlocker
 Summary:	kscreenlocker
 Name:		kp6-%{kpname}
-Version:	6.4.5
-Release:	2
+Version:	6.5.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	4f081374d39eb5a34f1e9aa6cf074ef3
+# Source0-md5:	f6c935bf8b8a3d45ed881432050654da
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -97,7 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_prefix}/libexec/kscreenlocker_greet
 %ghost %{_libdir}/libKScreenLocker.so.6
-%attr(755,root,root) %{_libdir}/libKScreenLocker.so.*.*
+%{_libdir}/libKScreenLocker.so.*.*
 %{_datadir}/dbus-1/interfaces/kf6_org.freedesktop.ScreenSaver.xml
 %{_datadir}/dbus-1/interfaces/org.kde.screensaver.xml
 %{_datadir}/knotifications6/ksmserver.notifyrc
