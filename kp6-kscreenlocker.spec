@@ -46,7 +46,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		qt6dir		%{_libdir}/qt6
 
 %description
-kscreenlocker
+Library and components for secure lock screen architecture.
+
+%description -l pl.UTF-8
+Biblioteka i komponenty do bezpiecznej architektury blokowania ekranu.
 
 %package devel
 Summary:	Header files for %{kpname} development
