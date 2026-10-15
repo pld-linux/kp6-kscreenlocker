@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.7.5
+%define		kdeplasmaver	6.8.0
 %define		qtver		5.15.2
 %define		kf6ver		5.19.0
 %define		kpname		kscreenlocker
 Summary:	kscreenlocker
 Name:		kp6-%{kpname}
-Version:	6.7.5
+Version:	6.8.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	72c38065d4d92c8d7ff1133618015279
+# Source0-md5:	2d1127069e65c7261e9c2cb06d8f9629
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -99,18 +99,19 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kpname}6.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_prefix}/libexec/kscreenlocker_greet
+%attr(755,root,root) %{_prefix}/libexec/kscreenlocker_worker
 %ghost %{_libdir}/libKScreenLocker.so.6
 %{_libdir}/libKScreenLocker.so.*.*
 %{_datadir}/dbus-1/interfaces/kf6_org.freedesktop.ScreenSaver.xml
 %{_datadir}/dbus-1/interfaces/org.kde.screensaver.xml
 %{_datadir}/knotifications6/ksmserver.notifyrc
-%dir %{_datadir}/ksmserver
-%dir %{_datadir}/ksmserver/screenlocker
-%dir %{_datadir}/ksmserver/screenlocker/org.kde.passworddialog
-%{_datadir}/ksmserver/screenlocker/org.kde.passworddialog/metadata.desktop
 %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so
 %{_desktopdir}/kcm_screenlocker.desktop
 %{_datadir}/qlogging-categories6/kscreenlocker.categories
+%dir %{_libdir}/qt6/qml/org/kde/kscreenlocker
+%{_libdir}/qt6/qml/org/kde/kscreenlocker/kscreenlocker_greet.qmltypes
+%{_libdir}/qt6/qml/org/kde/kscreenlocker/qmldir
+%{_datadir}/config.kcfg/kscreenlockersettings.kcfg
 
 %files devel
 %defattr(644,root,root,755)
